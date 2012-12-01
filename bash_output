@@ -1,0 +1,513 @@
+(14:03:51) ○ [mdl@MDLs-Mac.local] ~ (ruby-1.9.3-p194)  mkdir node-with-chef
+(14:04:12) ○ [mdl@MDLs-Mac.local] ~ (ruby-1.9.3-p194)  cd node-with-chef/
+(14:04:15) ○ [mdl@MDLs-Mac.local] ~/node-with-chef (ruby-1.9.3-p194)  git init
+Initialized empty Git repository in /Users/mdl/node-with-chef/.git/
+(14:04:19) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  git init
+Reinitialized existing Git repository in /Users/mdl/node-with-chef/.git/
+(14:06:21) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+(14:06:28) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  ll
+total 8
+drwxr-xr-x   4 mdl  staff   136 Dec  1 14:06 .
+drwxr-xr-x+ 62 mdl  staff  2108 Dec  1 14:06 ..
+drwxr-xr-x  10 mdl  staff   340 Dec  1 14:06 .git
+-rw-r--r--   1 mdl  staff  3957 Dec  1 14:06 Vagrantfile
+(14:06:37) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	Vagrantfile
+nothing added to commit but untracked files present (use "git add" to track)
+(14:06:40) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add Vagrantfile
+(14:06:46) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "Initialized Vagrant: vagrant init"
+[master (root-commit) e948e46] Initialized Vagrant: vagrant init
+ 1 file changed, 99 insertions(+)
+ create mode 100644 Vagrantfile
+(14:07:26) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  subl Vagrantfile 
+(14:08:02) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Vagrantfile
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+(14:09:47) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add Vagrantfile
+(14:09:51) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "Activated Chef and odejs cookbook"
+[master 7235e89] Activated Chef and odejs cookbook
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+(14:10:18) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant up
+[default] Importing base box 'base'...
+[default] The guest additions on this VM do not match the install version of
+VirtualBox! This may cause things such as forwarded ports, shared
+folders, and more to not work properly. If any of those things fail on
+this machine, please update the guest additions and repackage the
+box.
+
+Guest Additions Version: 4.2.0
+VirtualBox Version: 4.2.1
+[default] Matching MAC address for NAT networking...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+[default] -- v-csc-1: /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` v-csc-1 /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+(14:11:04) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.vagrant
+nothing added to commit but untracked files present (use "git add" to track)
+(14:12:47) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "started without cookbooks"
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.vagrant
+nothing added to commit but untracked files present (use "git add" to track)
+(14:13:05) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add .vagrant
+(14:13:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "started without cookbooks"
+[master 94e0e55] started without cookbooks
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .vagrant
+(14:13:13) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  mkdir cookbooks
+(14:13:36) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  mv ~/test/
+Vagrantfile  cookbooks/   hallo        main.js      
+(14:13:36) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  mv ~/test/cookbooks/nodejs/ cookbooks/
+(14:14:04) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  cd cookbooks/
+(14:14:09) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  ll
+total 0
+drwxr-xr-x   3 mdl  staff  102 Dec  1 14:14 .
+drwxr-xr-x   6 mdl  staff  204 Dec  1 14:13 ..
+drwxr-xr-x  14 mdl  staff  476 Dec  1 11:19 nodejs
+(14:14:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  cd ..
+(14:14:13) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add .
+(14:14:19) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "Installed nodejs cookbook"
+[master 14402c6] Installed nodejs cookbook
+ 1 file changed, 1 insertion(+)
+ create mode 160000 cookbooks/nodejs
+(14:14:48) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  open
+Usage: open [-e] [-t] [-f] [-W] [-R] [-n] [-g] [-h] [-b <bundle identifier>] [-a <application>] [filenames] [--args arguments]
+Help: Open opens files from a shell.
+      By default, opens each file using the default application for that file.  
+      If the file is in the form of a URL, the file will be opened as a URL.
+Options: 
+      -a                Opens with the specified application.
+      -b                Opens with the specified application bundle identifier.
+      -e                Opens with TextEdit.
+      -t                Opens with default text editor.
+      -f                Reads input from standard input and opens with TextEdit.
+      -F  --fresh       Launches the app fresh, that is, without restoring windows. Saved persistent state is lost, excluding Untitled documents.
+      -R, --reveal      Selects in the Finder instead of opening.
+      -W, --wait-apps   Blocks until the used applications are closed (even if they were already running).
+          --args        All remaining arguments are passed in argv to the application's main() function instead of opened.
+      -n, --new         Open a new instance of the application even if one is already running.
+      -j, --hide        Launches the app hidden.
+      -g, --background  Does not bring the application to the foreground.
+      -h, --header      Searches header file locations for headers matching the given filenames, and opens them.
+(14:15:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  open .
+(14:15:13) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant up
+[default] VM already created. Booting if it's not already running...
+(14:17:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant status
+Current VM states:
+
+default                  running
+
+The VM is running. To stop this VM, you can run `vagrant halt` to
+shut it down forcefully, or you can run `vagrant suspend` to simply
+suspend the virtual machine. In either case, to restart it again,
+simply run `vagrant up`.
+(14:17:36) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant reload
+[default] Attempting graceful shutdown of VM...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+[default] -- v-csc-1: /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+[default] Running provisioner: Vagrant::Provisioners::ChefSolo...
+[default] Generating chef JSON and uploading...
+[default] Running chef-solo...
+stdin: is not a tty
+[2012-12-01T14:18:08+01:00] INFO: *** Chef 10.14.2 ***
+[2012-12-01T14:18:08+01:00] INFO: Setting the run_list to ["recipe[nodejs]"] from JSON
+[2012-12-01T14:18:08+01:00] INFO: Run List is [recipe[nodejs]]
+[2012-12-01T14:18:08+01:00] INFO: Run List expands to [nodejs]
+[2012-12-01T14:18:08+01:00] INFO: Starting Chef Run for lucid32.hsd1.ca.comcast.net.
+[2012-12-01T14:18:08+01:00] INFO: Running start handlers
+[2012-12-01T14:18:08+01:00] INFO: Start handlers complete.
+
+================================================================================
+
+Recipe Compile Error in /tmp/vagrant-chef-1/chef-solo-1/cookbooks/nodejs/recipes/default.rb
+
+================================================================================
+
+
+Chef::Exceptions::CookbookNotFound
+
+----------------------------------
+
+Cookbook apt not found. If you're loading apt from another cookbook, make sure you configure the dependency in your metadata
+
+
+Cookbook Trace:
+
+---------------
+
+  /tmp/vagrant-chef-1/chef-solo-1/cookbooks/nodejs/recipes/default.rb:22:in `from_file'
+
+
+Relevant File Content:
+----------------------
+/tmp/vagrant-chef-1/chef-solo-1/cookbooks/nodejs/recipes/default.rb:
+
+  1:  #
+  2:  # Author:: Marius Ducea (marius@promethost.com)
+  3:  # Cookbook Name:: nodejs
+  4:  # Recipe:: default
+  5:  #
+  6:  # Copyright 2010-2012, Promet Solutions
+  7:  #
+  8:  # Licensed under the Apache License, Version 2.0 (the "License");
+  9:  # you may not use this file except in compliance with the License.
+
+[2012-12-01T14:18:08+01:00] ERROR: Running exception handlers
+[2012-12-01T14:18:08+01:00] ERROR: Exception handlers complete
+[2012-12-01T14:18:08+01:00] FATAL: Stacktrace dumped to /tmp/vagrant-chef-1/chef-stacktrace.out
+[2012-12-01T14:18:08+01:00] FATAL: Chef::Exceptions::CookbookNotFound: Cookbook apt not found. If you're loading apt from another cookbook, make sure you configure the dependency in your metadata
+Chef never successfully completed! Any errors should be visible in the
+output above. Please fix your recipes so that they properly complete.
+(14:18:08) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  cd cookbooks/
+(14:18:25) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  ll
+total 0
+drwxr-xr-x   3 mdl  staff  102 Dec  1 14:14 .
+drwxr-xr-x   6 mdl  staff  204 Dec  1 14:13 ..
+drwxr-xr-x  14 mdl  staff  476 Dec  1 11:19 nodejs
+(14:18:26) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  more nodejs/
+.git/         .travis.yml   CHANGELOG.md  Rakefile      attributes/   recipes/      
+.gitignore    Berksfile     README.md     Vagrantfile   metadata.rb   test/         
+(14:18:26) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  more nodejs/metadata.rb 
+maintainer       "Promet Solutions"
+maintainer_email "marius@promethost.com"
+license          "Apache 2.0"
+description      "Installs/Configures nodejs"
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+version          "1.0.2"
+name             "nodejs"
+provides         "nodejs"
+
+recipe "nodejs", "Installs Node.JS based on the default installation method"
+recipe "nodejs::install_from_source", "Installs Node.JS from source"
+recipe "nodejs::install_from_package", "Installs Node.JS from packages"
+recipe "nodejs::npm", "Installs npm from source - a package manager for node"
+
+depends "build-essential"
+depends "apt"
+
+%w{ debian ubuntu centos redhat smartos }.each do |os|
+    supports os
+end
+(14:19:05) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  git clone git://github.com/opscode-cookbooks/apt.git
+Cloning into 'apt'...
+remote: Counting objects: 554, done.
+remote: Compressing objects: 100% (279/279), done.
+remote: Total 554 (delta 267), reused 525 (delta 239)
+Receiving objects: 100% (554/554), 81.74 KiB, done.
+Resolving deltas: 100% (267/267), done.
+(14:19:34) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  git clone git://github.com/opscode-cookbooks/build-essential.git
+Cloning into 'build-essential'...
+remote: Counting objects: 167, done.
+remote: Compressing objects: 100% (87/87), done.
+remote: Total 167 (delta 67), reused 152 (delta 54)
+Receiving objects: 100% (167/167), 26.05 KiB, done.
+Resolving deltas: 100% (67/67), done.
+(14:20:00) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  git add .
+(14:20:04) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  git commit -m "added apt and build-essential cookbooks"
+[master 0297157] added apt and build-essential cookbooks
+ 2 files changed, 2 insertions(+)
+ create mode 160000 cookbooks/apt
+ create mode 160000 cookbooks/build-essential
+(14:20:25) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  vagrant reload
+[default] Attempting graceful shutdown of VM...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+[default] -- v-csc-1: /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+[default] Running provisioner: Vagrant::Provisioners::ChefSolo...
+[default] Generating chef JSON and uploading...
+[default] Running chef-solo...
+stdin: is not a tty
+[2012-12-01T14:21:03+01:00] INFO: *** Chef 10.14.2 ***
+[2012-12-01T14:21:03+01:00] INFO: Setting the run_list to ["recipe[nodejs]"] from JSON
+[2012-12-01T14:21:03+01:00] INFO: Run List is [recipe[nodejs]]
+[2012-12-01T14:21:03+01:00] INFO: Run List expands to [nodejs]
+[2012-12-01T14:21:03+01:00] INFO: Starting Chef Run for lucid32.hsd1.ca.comcast.net.
+[2012-12-01T14:21:03+01:00] INFO: Running start handlers
+[2012-12-01T14:21:03+01:00] INFO: Start handlers complete.
+[2012-12-01T14:21:03+01:00] INFO: Processing execute[apt-get-update] action run (apt::default line 22)
+[2012-12-01T14:21:06+01:00] INFO: execute[apt-get-update] ran successfully
+[2012-12-01T14:21:06+01:00] INFO: Processing execute[apt-get update] action nothing (apt::default line 29)
+[2012-12-01T14:21:06+01:00] INFO: Processing execute[apt-get autoremove] action nothing (apt::default line 36)
+[2012-12-01T14:21:06+01:00] INFO: Processing execute[apt-get autoclean] action nothing (apt::default line 42)
+[2012-12-01T14:21:06+01:00] INFO: Processing package[update-notifier-common] action install (apt::default line 48)
+[2012-12-01T14:21:07+01:00] INFO: package[update-notifier-common] sending run action to execute[apt-get-update] (immediate)
+[2012-12-01T14:21:07+01:00] INFO: Processing execute[apt-get-update] action run (apt::default line 22)
+[2012-12-01T14:21:08+01:00] INFO: execute[apt-get-update] ran successfully
+[2012-12-01T14:21:08+01:00] INFO: Processing execute[apt-get-update-periodic] action run (apt::default line 52)
+[2012-12-01T14:21:08+01:00] INFO: Processing directory[/var/cache/local] action create (apt::default line 62)
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local] created directory /var/cache/local
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local] owner changed to 0
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local] group changed to 0
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local] mode changed to 755
+[2012-12-01T14:21:08+01:00] INFO: Processing directory[/var/cache/local/preseeding] action create (apt::default line 62)
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local/preseeding] created directory /var/cache/local/preseeding
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local/preseeding] owner changed to 0
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local/preseeding] group changed to 0
+[2012-12-01T14:21:08+01:00] INFO: directory[/var/cache/local/preseeding] mode changed to 755
+[2012-12-01T14:21:08+01:00] INFO: Processing package[build-essential] action install (build-essential::default line 51)
+[2012-12-01T14:21:21+01:00] INFO: Processing package[binutils-doc] action install (build-essential::default line 51)
+[2012-12-01T14:21:23+01:00] INFO: Processing package[autoconf] action install (build-essential::default line 58)
+[2012-12-01T14:21:27+01:00] INFO: Processing package[flex] action install (build-essential::default line 58)
+[2012-12-01T14:21:29+01:00] INFO: Processing package[bison] action install (build-essential::default line 58)
+[2012-12-01T14:21:31+01:00] INFO: Processing package[libssl-dev] action install (nodejs::install_from_source line 27)
+[2012-12-01T14:21:31+01:00] INFO: Processing remote_file[/usr/local/src/node-v0.8.6.tar.gz] action create_if_missing (nodejs::install_from_source line 38)
+[2012-12-01T14:22:02+01:00] INFO: remote_file[/usr/local/src/node-v0.8.6.tar.gz] updated
+[2012-12-01T14:22:02+01:00] INFO: remote_file[/usr/local/src/node-v0.8.6.tar.gz] mode changed to 644
+[2012-12-01T14:22:02+01:00] INFO: Processing execute[tar --no-same-owner -zxf node-v0.8.6.tar.gz] action run (nodejs::install_from_source line 47)
+[2012-12-01T14:22:03+01:00] INFO: execute[tar --no-same-owner -zxf node-v0.8.6.tar.gz] ran successfully
+[2012-12-01T14:22:03+01:00] INFO: Processing bash[compile node.js] action run (nodejs::install_from_source line 52)
+[2012-12-01T14:25:56+01:00] INFO: bash[compile node.js] ran successfully
+[2012-12-01T14:25:56+01:00] INFO: Processing execute[nodejs make install] action run (nodejs::install_from_source line 62)
+[2012-12-01T14:25:57+01:00] INFO: execute[nodejs make install] ran successfully
+[2012-12-01T14:25:57+01:00] INFO: Chef Run complete in 294.317272 seconds
+[2012-12-01T14:25:57+01:00] INFO: Running report handlers
+[2012-12-01T14:25:57+01:00] INFO: Report handlers complete
+(14:26:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  vagrant ssh
+Linux lucid32 2.6.32-38-generic #83-Ubuntu SMP Wed Jan 4 11:13:04 UTC 2012 i686 GNU/Linux
+Ubuntu 10.04.4 LTS
+
+Welcome to Ubuntu!
+ * Documentation:  https://help.ubuntu.com/
+
+62 packages can be updated.
+50 updates are security updates.
+
+New release 'precise' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Welcome to your Vagrant-built virtual machine.
+Last login: Fri Sep 14 07:26:29 2012 from 10.0.2.2
+vagrant@lucid32:~$ ll
+total 44
+drwxr-xr-x 4 vagrant vagrant 4096 Sep 14 07:21 ./
+drwxr-xr-x 3 root    root    4096 Sep 14 00:12 ../
+-rw-r--r-- 1 vagrant vagrant  220 Sep 14 00:12 .bash_logout
+-rw-r--r-- 1 vagrant vagrant 3103 Sep 14 00:12 .bashrc
+drwx------ 2 vagrant vagrant 4096 Sep 14 07:13 .cache/
+-rw-r--r-- 1 vagrant vagrant  675 Sep 14 00:12 .profile
+drwx------ 2 vagrant vagrant 4096 Sep 14 07:20 .ssh/
+-rw-r--r-- 1 vagrant vagrant    0 Sep 14 07:13 .sudo_as_admin_successful
+-rw------- 1 vagrant vagrant    6 Sep 14 07:13 .vbox_version
+-rw------- 1 vagrant vagrant   12 Sep 14 07:13 .veewee_version
+-rwxr-xr-x 1 vagrant vagrant 6364 Sep 14 07:13 postinstall.sh*
+vagrant@lucid32:~$ cd /vagrant
+vagrant@lucid32:/vagrant$ ll
+total 12
+drwxr-xr-x  1 vagrant vagrant  204 Dec  1 14:13 ./
+drwxr-xr-x 23 root    root    4096 Dec  1 14:10 ../
+drwxr-xr-x  1 vagrant vagrant  442 Dec  1 14:26 .git/
+-rw-r--r--  1 vagrant vagrant   61 Dec  1 14:10 .vagrant
+-rw-r--r--  1 vagrant vagrant 3935 Dec  1 14:08 Vagrantfile
+drwxr-xr-x  1 vagrant vagrant  170 Dec  1 14:19 cookbooks/
+vagrant@lucid32:/vagrant$ node
+> 
+undefined
+> 
+undefined
+> 
+undefined
+> 
+(^C again to quit)
+> 
+vagrant@lucid32:/vagrant$ exit
+logout
+Connection to 127.0.0.1 closed.
+(14:27:17) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  > main.js
+(14:27:27) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  subl main.js 
+(14:27:32) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  git add .
+(14:28:07) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  git commit -m "standard node example"
+[master 5dda5d9] standard node example
+ 1 file changed, 6 insertions(+)
+ create mode 100644 cookbooks/main.js
+(14:28:20) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✓) (ruby-1.9.3-p194)  mv main.js ..
+(14:28:44) ± [mdl@MDLs-Mac.local] ~/node-with-chef/cookbooks (master ✗) (ruby-1.9.3-p194)  cd ..
+(14:28:45) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add .
+(14:28:51) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "standard node example"
+[master 9bbc486] standard node example
+ 1 file changed, 6 insertions(+)
+ create mode 100644 main.js
+(14:28:53) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    cookbooks/main.js
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+(14:29:00) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git rm cookbooks/main.js
+rm 'cookbooks/main.js'
+(14:29:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "standard node example"
+[master 8933619] standard node example
+ 1 file changed, 6 deletions(-)
+ delete mode 100644 cookbooks/main.js
+(14:29:11) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  curl localhost:1337
+curl: (7) couldn't connect to host
+(14:30:10) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  subl Vagrantfile 
+(14:30:21) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  git add .
+(14:30:39) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "port forwarding"
+[master 55032cf] port forwarding
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(14:30:50) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant reload
+[default] Attempting graceful shutdown of VM...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 => 2222 (adapter 1)
+[default] -- 1337 => 1337 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+[default] -- v-csc-1: /tmp/vagrant-chef-1/chef-solo-1/cookbooks
+[default] Running provisioner: Vagrant::Provisioners::ChefSolo...
+[default] Generating chef JSON and uploading...
+[default] Running chef-solo...
+stdin: is not a tty
+[2012-12-01T14:31:23+01:00] INFO: *** Chef 10.14.2 ***
+[2012-12-01T14:31:23+01:00] INFO: Setting the run_list to ["recipe[nodejs]"] from JSON
+[2012-12-01T14:31:23+01:00] INFO: Run List is [recipe[nodejs]]
+[2012-12-01T14:31:23+01:00] INFO: Run List expands to [nodejs]
+[2012-12-01T14:31:23+01:00] INFO: Starting Chef Run for lucid32.hsd1.ca.comcast.net.
+[2012-12-01T14:31:23+01:00] INFO: Running start handlers
+[2012-12-01T14:31:23+01:00] INFO: Start handlers complete.
+[2012-12-01T14:31:23+01:00] INFO: Processing execute[apt-get-update] action run (apt::default line 22)
+[2012-12-01T14:31:23+01:00] INFO: Processing execute[apt-get update] action nothing (apt::default line 29)
+[2012-12-01T14:31:23+01:00] INFO: Processing execute[apt-get autoremove] action nothing (apt::default line 36)
+[2012-12-01T14:31:23+01:00] INFO: Processing execute[apt-get autoclean] action nothing (apt::default line 42)
+[2012-12-01T14:31:23+01:00] INFO: Processing package[update-notifier-common] action install (apt::default line 48)
+[2012-12-01T14:31:24+01:00] INFO: Processing execute[apt-get-update-periodic] action run (apt::default line 52)
+[2012-12-01T14:31:24+01:00] INFO: Processing directory[/var/cache/local] action create (apt::default line 62)
+[2012-12-01T14:31:24+01:00] INFO: Processing directory[/var/cache/local/preseeding] action create (apt::default line 62)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[build-essential] action install (build-essential::default line 51)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[binutils-doc] action install (build-essential::default line 51)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[autoconf] action install (build-essential::default line 58)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[flex] action install (build-essential::default line 58)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[bison] action install (build-essential::default line 58)
+[2012-12-01T14:31:24+01:00] INFO: Processing package[libssl-dev] action install (nodejs::install_from_source line 27)
+[2012-12-01T14:31:24+01:00] INFO: Processing remote_file[/usr/local/src/node-v0.8.6.tar.gz] action create_if_missing (nodejs::install_from_source line 38)
+[2012-12-01T14:31:24+01:00] INFO: Processing execute[tar --no-same-owner -zxf node-v0.8.6.tar.gz] action run (nodejs::install_from_source line 47)
+[2012-12-01T14:31:24+01:00] INFO: Processing bash[compile node.js] action run (nodejs::install_from_source line 52)
+[2012-12-01T14:31:24+01:00] INFO: Processing execute[nodejs make install] action run (nodejs::install_from_source line 62)
+[2012-12-01T14:31:24+01:00] INFO: Chef Run complete in 0.503608 seconds
+[2012-12-01T14:31:24+01:00] INFO: Running report handlers
+[2012-12-01T14:31:24+01:00] INFO: Report handlers complete
+(14:31:24) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✓) (ruby-1.9.3-p194)  vagrant ssh
+Linux lucid32 2.6.32-38-generic #83-Ubuntu SMP Wed Jan 4 11:13:04 UTC 2012 i686 GNU/Linux
+Ubuntu 10.04.4 LTS
+
+Welcome to Ubuntu!
+ * Documentation:  https://help.ubuntu.com/
+
+62 packages can be updated.
+50 updates are security updates.
+
+New release 'precise' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Welcome to your Vagrant-built virtual machine.
+Last login: Sat Dec  1 14:29:19 2012 from 10.0.2.2
+vagrant@lucid32:~$ cd /vagrant
+vagrant@lucid32:/vagrant$ node main.js 
+Server running at http://127.0.0.1:1337/
+^Cvagrant@lucid32:/vagrant$ netstat -an
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:52702           0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN     
+tcp        0      0 10.0.2.15:22            10.0.2.2:65427          ESTABLISHED
+tcp6       0      0 :::22                   :::*                    LISTEN     
+udp        0      0 0.0.0.0:68              0.0.0.0:*                          
+udp        0      0 0.0.0.0:68              0.0.0.0:*                          
+udp        0      0 0.0.0.0:842             0.0.0.0:*                          
+udp        0      0 0.0.0.0:56040           0.0.0.0:*                          
+udp        0      0 0.0.0.0:111             0.0.0.0:*                          
+udp        0      0 10.0.2.15:123           0.0.0.0:*                          
+udp        0      0 127.0.0.1:123           0.0.0.0:*                          
+udp        0      0 0.0.0.0:123             0.0.0.0:*                          
+udp        0      0 10.0.2.15:50837         10.0.2.3:53             ESTABLISHED
+udp6       0      0 ::1:123                 :::*                               
+udp6       0      0 :::123                  :::*                               
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     2745     @/com/ubuntu/upstart
+unix  7      [ ]         DGRAM                    3651     /dev/log
+unix  2      [ ]         DGRAM                    2855     @/org/kernel/udev/udevd
+unix  3      [ ]         STREAM     CONNECTED     5568     
+unix  3      [ ]         STREAM     CONNECTED     5567     
+unix  2      [ ]         DGRAM                    5521     
+unix  2      [ ]         DGRAM                    4622     
+unix  2      [ ]         DGRAM                    4215     
+unix  2      [ ]         DGRAM                    4105     
+unix  2      [ ]         DGRAM                    3835     
+unix  3      [ ]         DGRAM                    2889     
+unix  3      [ ]         DGRAM                    2888     
+unix  3      [ ]         STREAM     CONNECTED     2836     @/com/ubuntu/upstart
+unix  3      [ ]         STREAM     CONNECTED     2835     
+vagrant@lucid32:/vagrant$ node main.js 
+Server running at http://127.0.0.1:1337/
+^Cvagrant@lucid32:/vagrant$ exit
+logout
+Connection to 127.0.0.1 closed.
+(14:34:59) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  subl main.js 
+(14:35:04) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git add .
+(14:35:25) ± [mdl@MDLs-Mac.local] ~/node-with-chef (master ✗) (ruby-1.9.3-p194)  git commit -m "bind to all interfaces"
+[master 953320b] bind to all interfaces
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+ create mode 100644 cookbooks/main.js
+(14:35:42) ± [mdl@MDLs
